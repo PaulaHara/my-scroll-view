@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		DA86582821719EC500DC5BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA86582721719EC500DC5BDE /* AppDelegate.swift */; };
-		DA86582A21719EC500DC5BDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA86582921719EC500DC5BDE /* ViewController.swift */; };
+		DA86582A21719EC500DC5BDE /* MyScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA86582921719EC500DC5BDE /* MyScrollViewController.swift */; };
 		DA86582D21719EC500DC5BDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA86582B21719EC500DC5BDE /* Main.storyboard */; };
 		DA86582F21719ECE00DC5BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA86582E21719ECE00DC5BDE /* Assets.xcassets */; };
 		DA86583221719ECE00DC5BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA86583021719ECE00DC5BDE /* LaunchScreen.storyboard */; };
+		DAD6924D2176C64500F25264 /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6924C2176C64500F25264 /* MyScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA86582421719EC500DC5BDE /* MyScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA86582721719EC500DC5BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA86582921719EC500DC5BDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA86582921719EC500DC5BDE /* MyScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrollViewController.swift; sourceTree = "<group>"; };
 		DA86582C21719EC500DC5BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA86582E21719ECE00DC5BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA86583121719ECE00DC5BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA86583321719ECE00DC5BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAD6924C2176C64500F25264 /* MyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				DA86582721719EC500DC5BDE /* AppDelegate.swift */,
-				DA86582921719EC500DC5BDE /* ViewController.swift */,
+				DA86582921719EC500DC5BDE /* MyScrollViewController.swift */,
 				DA86582B21719EC500DC5BDE /* Main.storyboard */,
 				DA86582E21719ECE00DC5BDE /* Assets.xcassets */,
 				DA86583021719ECE00DC5BDE /* LaunchScreen.storyboard */,
 				DA86583321719ECE00DC5BDE /* Info.plist */,
+				DAD6924C2176C64500F25264 /* MyScrollView.swift */,
 			);
 			path = MyScrollView;
 			sourceTree = "<group>";
@@ -135,7 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA86582A21719EC500DC5BDE /* ViewController.swift in Sources */,
+				DA86582A21719EC500DC5BDE /* MyScrollViewController.swift in Sources */,
+				DAD6924D2176C64500F25264 /* MyScrollView.swift in Sources */,
 				DA86582821719EC500DC5BDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
