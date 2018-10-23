@@ -10,28 +10,55 @@ import UIKit
 
 class MyScrollView: UIView {
     
-    var contectSize = CGSize()
+    var contentSize = CGSize()
     var panGestureRecognizer = UIPanGestureRecognizer()
     
-    var redView = UIView()
-    var greenView = UIView()
+    var tx = CGFloat()
+    var ty = CGFloat()
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-        addViews()
-    }
-    
-    func addViews() {
-        // Calculate the height and size of each views
-        redView = UIView(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
-        redView.backgroundColor = UIColor.red
-        self.addSubview(redView)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        greenView = UIView(frame: CGRect(x: 150, y: 150, width: 150, height: 200))
-        greenView.backgroundColor = UIColor.green
-        self.addSubview(greenView)
+        contentSize = CGSize(width: frame.width, height: frame.height)
+        
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(MyScrollView.draggedView(_:)))
+        self.addGestureRecognizer(panGestureRecognizer)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func draggedView(_ sender:UIPanGestureRecognizer){
+        let translation = sender.translation(in: self)
+        
+        // Two ways of doing this:
+        // 1:
+//        var newBounds = self.bounds
+//
+//        let newBoundsOriginX = newBounds.origin.x - translation.x
+//        let minOriginX = CGFloat()
+//        let maxOriginX = self.contentSize.width
+//
+//        let newBoundsOriginY = newBounds.origin.y - translation.y
+//        let minOriginY = CGFloat()
+//        let maxOriginY = self.contentSize.height
+//
+//        newBounds.origin.x = max(minOriginX, min(newBoundsOriginX, maxOriginX))
+//        newBounds.origin.y = max(minOriginY, min(newBoundsOriginY, maxOriginY))
+//
+//        self.bounds = newBounds
+        
+        // 2:
+        tx = tx - translation.x
+        ty = ty - translation.y
+        
+        let newBoundsX = max(CGFloat(), min(tx, self.contentSize.width/2))
+        let newBoundsY = max(CGFloat(), min(ty, self.contentSize.height/2))
+        
+        self.bounds = CGRect(x: newBoundsX, y: newBoundsY, width: self.bounds.width, height: self.bounds.height)
+        
+        // This stay always here
+        sender.setTranslation(CGPoint.zero, in: self)
+    }
 }
